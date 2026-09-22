@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="images/icon.jpg">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="index.html#home" class="logo">
+            <img src="images/Color High Res.jpg" alt="PhysiXplore Lab">
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html#home">Home</a>
+
+            <a href="mission.html">Our Mission</a>
+
+            <div class="nav-dropdown">
+
+                <span class="nav-dropdown-title">
+                    The Kit
+                    <span class="dropdown-arrow"></span>
+                </span>
+
+                <div class="nav-dropdown-menu">
+                    <a href="kit.html">Inside the Kit</a>
+                    <a href="resources.html">Free Resources</a>
+                    <a href="get-kit.html">Get the Kit</a>
+                </div>
+
+            </div>
+
+
+            <div class="nav-dropdown">
+
+                <span class="nav-dropdown-title">
+                    Impact
+                    <span class="dropdown-arrow"></span>
+                </span>
+
+                <div class="nav-dropdown-menu">
+                    <a href="workshops.html">Workshops</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+
+            </div>
+
+
+            <div class="nav-dropdown">
+
+                <span class="nav-dropdown-title">
+                    About Us
+                    <span class="dropdown-arrow"></span>
+                </span>
+
+                <div class="nav-dropdown-menu">
+                    <a href="story.html">Our Story</a>
+                    <a href="team.html">Our Team</a>
+                </div>
+                
+
+            </div>
+
+
+            <a href="get-involved.html">Get Involved</a>
+
+            <a href="get-kit.html" class="get-kit-button">
+                Get the Kit
+            </a>
+
+        </div>
+        <!-- SOCIAL ICONS -->
+    <div class="social-links">
+
+        <a href="https://www.instagram.com/physixplorelab/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <img src="images/ig.png" alt="Instagram">
+        </a>
+
+        <a href="mailto:physixplorelab@gmail.com"
+           aria-label="Email PhysiXplore Lab">
+            <img src="images/email.png" alt="Email">
+        </a>
+
+    </div>
+
+    </nav>
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery-page">
+
+        <div class="gallery-page-content">
+
+
+            <h1>GALLERY</h1>
+
+            <p class="gallery-intro">
+                Explore photos from our hands-on physics workshops and events.
+            </p>
+
+
+            <!-- EVENT GRID -->
+
+            <div class="gallery-grid">
+
+
+                <!-- EVENT 1 -->
+
+                <div class="gallery-album" onclick="openGallery(0)">
+
+                    <div class="gallery-cover">
+
+                        <img
+                            src="images/comingsoon1.jpg"
+                            alt="Electricity & Magnetism Workshop">
+
+                    </div>
+
+                    <div class="gallery-album-info">
+
+                        <h2>Electricity & Magnetism Workshop</h2>
+
+                        <p>
+                            October 24, 2026 · Atlas Church
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 2 -->
+
+                <div class="gallery-album" onclick="openGallery(1)">
+
+                    <div class="gallery-cover">
+
+                        <img
+                            src="images/comingsoon1.jpg"
+                            alt="PhysiXplore Physics Workshop Series">
+
+                    </div>
+
+                    <div class="gallery-album-info">
+
+                        <h2>PhysiXplore: Physics Workshop Series</h2>
+
+                        <p>
+                            Wednesdays · Ashley Falls
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 3 -->
+
+                <div class="gallery-album" onclick="openGallery(2)">
+
+                    <div class="gallery-cover">
+
+                        <img
+                            src="images/lwbc/lwbc1.jpg"
+                            alt="Physics Workshop Series">
+
+                    </div>
+
+                    <div class="gallery-album-info">
+
+                        <h2>LWBC: Physics Workshop Series</h2>
+
+                        <p>
+                            Sundays · Living Waters Bible Church
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EVENT 4 -->
+
+                <div class="gallery-album" onclick="openGallery(3)">
+
+                    <div class="gallery-cover">
+
+                        <img
+                            src="images/slc/slc1.jpg"
+                            alt="STEAMLabs: A Hands-on Introduction to Physics">
+
+                    </div>
+
+                    <div class="gallery-album-info">
+
+                        <h2>STEAMLabs: A Hands-on Introduction to Physics</h2>
+
+                        <p>
+                            August 3–8 · After School Learning Tree
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO VIEWER -->
+
+    <div id="gallery-viewer" class="gallery-viewer">
+
+        <button
+            class="gallery-close"
+            onclick="closeGallery()">
+            ×
+        </button>
+
+
+        <div class="gallery-viewer-content">
+
+            <h2 id="gallery-event-title"></h2>
+
+
+           <div class="gallery-photo-viewer">
+
+    <button
+        class="gallery-photo-arrow left"
+        onclick="changeGalleryPhoto(-1)">
+        &#8592;
+    </button>
+
+    <img
+        id="gallery-current-photo"
+        src=""
+        alt="Event photo">
+
+    <button
+        class="gallery-photo-arrow right"
+        onclick="changeGalleryPhoto(1)">
+        &#8594;
+    </button>
+
+</div>
+
+            <p id="gallery-photo-count"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const galleries = [
+
+            {
+                title: "Electricity & Magnetism Workshop",
+
+                photos: [
+                    "images/atlaschurch.jpg",
+                    "images/atlaschurch-2.jpg",
+                    "images/atlaschurch-3.jpg",
+                    "images/atlaschurch-4.jpg"
+                ]
+            },
+
+
+            {
+                title: "PhysiXplore: Physics Workshop Series",
+
+                photos: [
+                    "images/ashleyfalls.jpg",
+                    "images/ashleyfalls-2.jpg",
+                    "images/ashleyfalls-3.jpg",
+                    "images/ashleyfalls-4.jpg"
+                ]
+            },
+
+
+            {
+                title: "LWBC: Physics Workshop Series",
+
+                photos: [
+        "images/lwbc/lwbc1.jpg",
+        "images/lwbc/lwbc2.jpg",
+        "images/lwbc/lwbc3.jpg",
+        "images/lwbc/lwbc4.jpg",
+        "images/lwbc/lwbc5.jpg",
+        "images/lwbc/lwbc6.jpg",
+        "images/lwbc/lwbc7.jpg",
+        "images/lwbc/lwbc8.jpg",
+        "images/lwbc/lwbc9.jpg",
+        "images/lwbc/lwbc10.jpg",
+        "images/lwbc/lwbc11.jpg",
+    ]
+            },
+
+
+            {
+    title: "STEAMLabs: A Hands-on Introduction to Physics",
+
+    photos: [
+        "images/slc/slc1.jpg",
+        "images/slc/slc2.jpg",
+        "images/slc/slc3.jpg",
+        "images/slc/slc4.jpg",
+        "images/slc/slc5.jpg",
+        "images/slc/slc6.jpg"
+    ]
+}
+
+        ];
+
+
+      let currentGallery = 0;
+let currentGalleryPhoto = 0;
+
+
+function openGallery(index) {
+
+    currentGallery = index;
+    currentGalleryPhoto = 0;
+
+    const gallery = galleries[currentGallery];
+
+    document.getElementById("gallery-event-title").textContent =
+        gallery.title;
+
+    document.getElementById("gallery-current-photo").src =
+        gallery.photos[currentGalleryPhoto];
+
+    document.getElementById("gallery-current-photo").alt =
+        gallery.title;
+
+    document.getElementById("gallery-photo-count").textContent =
+        "1 / " + gallery.photos.length;
+
+    document.getElementById("gallery-viewer")
+        .classList.add("active");
+}
+
+
+function changeGalleryPhoto(direction) {
+
+    const gallery = galleries[currentGallery];
+
+    currentGalleryPhoto += direction;
+
+
+    if (currentGalleryPhoto < 0) {
+        currentGalleryPhoto = gallery.photos.length - 1;
+    }
+
+
+    if (currentGalleryPhoto >= gallery.photos.length) {
+        currentGalleryPhoto = 0;
+    }
+
+
+    document.getElementById("gallery-current-photo").src =
+        gallery.photos[currentGalleryPhoto];
+
+
+    document.getElementById("gallery-photo-count").textContent =
+        (currentGalleryPhoto + 1) +
+        " / " +
+        gallery.photos.length;
+}
+
+
+function closeGallery() {
+
+    document.getElementById("gallery-viewer")
+        .classList.remove("active");
+
+}    </script>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-content">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <a href="index.html#home">
+    <img src="images/Color High Res.jpg" alt="PhysiXplore Lab">
+</a>
+
+            <p>
+                A student-led initiative turning physics into applicable
+                experiments that people of all ages can understand!
+            </p>
+
+        </div>
+
+
+        <!-- OUR MISSION -->
+        <div class="footer-column footer-action">
+
+    <a href="mission.html">Our Mission</a>
+
+</div>
+
+
+        <!-- THE KIT -->
+        <div class="footer-column">
+
+            <h3>The Kit</h3>
+
+            <a href="kit.html">Inside the Kit</a>
+            <a href="resources.html">Free Resources</a>
+            <a href="get-kit.html">Get the Kit</a>
+
+        </div>
+
+
+        <!-- IMPACT -->
+        <div class="footer-column">
+
+            <h3>Impact</h3>
+
+            <a href="workshops.html">Workshops</a>
+            <a href="gallery.html">Gallery</a>
+
+        </div>
+
+
+        <!-- ABOUT US -->
+        <div class="footer-column">
+
+            <h3>About Us</h3>
+
+            <a href="story.html">Our Story</a>
+            <a href="team.html">Our Team</a>
+            <a href="get-involved.html">Contact Us</a>
+
+        </div>
+
+
+        <!-- GET INVOLVED -->
+        <div class="footer-column footer-action">
+
+            <a href="get-involved.html">Get Involved</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 PhysiXplore Lab. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+</body>
+
+</html>
